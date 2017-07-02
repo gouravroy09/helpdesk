@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://ticketit.kordy.info/tickets/complete -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ticketi demo -     Helpdesk main page
+</title>
+
+    <!-- Fonts -->
+    <link href="./Ticketi demo - User Helpdesk completed page_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./Ticketi demo - User Helpdesk completed page_files/css" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="./Ticketi demo - User Helpdesk completed page_files/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        .fa-btn {
+            margin-right: 6px;
+        }
+    </style>
+<link rel="stylesheet" type="text/css" href="./Ticketi demo - User Helpdesk completed page_files/dataTables.bootstrap.css"><link rel="stylesheet" type="text/css" href="./Ticketi demo - User Helpdesk completed page_files/responsive.bootstrap.min.css"><link rel="stylesheet" type="text/css" href="./Ticketi demo - User Helpdesk completed page_files/summernote.css"><link rel="stylesheet" type="text/css" href="./Ticketi demo - User Helpdesk completed page_files/font-awesome.min(1).css"><link rel="stylesheet" type="text/css" href="./Ticketi demo - User Helpdesk completed page_files/codemirror.min.css"><link rel="stylesheet" type="text/css" href="./Ticketi demo - User Helpdesk completed page_files/monokai.min.css"></head>
+<body id="app-layout"><div id="touchvpn_icon_container" class="disconnected" draggable="true" style="right: 1.04166667% !important; bottom: 1.97628458% !important;"><div id="touchvpn_status_icon" class="touchvpn_cz"><div class="touchvpn_icon_sign">Best choice for browsing</div></div><div id="touchvpn_icon_selector"><div class="touchvpn_country touchvpn_ca"><div class="touchvpn_icon_sign">Browse from Canada</div></div><div class="touchvpn_country touchvpn_cl"><div class="touchvpn_icon_sign">Browse from Chile</div></div><div class="touchvpn_country touchvpn_de"><div class="touchvpn_icon_sign">Browse from Germany</div></div><div class="touchvpn_country touchvpn_gb"><div class="touchvpn_icon_sign">Browse from United Kingdom</div></div></div></div>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="/">
+                    HelpDesk Demo
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                                                    
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Prof. Creola Bednar <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+                    <script type="text/javascript">
+    function loadCSS(filename) {
+        var file = document.createElement("link");
+        file.setAttribute("rel", "stylesheet");
+        file.setAttribute("type", "text/css");
+        file.setAttribute("href", filename);
+
+        if (typeof file !== "undefined"){
+            document.getElementsByTagName("head")[0].appendChild(file)
+        }
+    }
+    loadCSS("//cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css");
+    loadCSS("//cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css");
+                    loadCSS("https://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+                            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/theme/monokai.min.css");
+            </script><div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="">
+                <a href="userActiveTickets">Active Tickets
+                    <span class="badge">
+                         0                    </span>
+                </a>
+            </li>
+            <li role="presentation" class="active">
+                <a href="userCompletedTickets">Completed Tickets
+                    <span class="badge">
+                        1                    </span>
+                </a>
+            </li>
+
+            
+        </ul>
+    </div>
+</div>
+    <div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h2>My Tickets
+            <a href="userNewTicket" class="btn btn-primary pull-right">Create new ticket</a>
+        </h2>
+    </div>
+
+    <div class="panel-body">
+        <div id="message"></div>
+
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline no-footer"><div class="row"><div class="col-xs-6"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm"><option value="10">10</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-xs-6"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div></div></div><table class="table table-condensed table-stripe ddt-responsive dataTable no-footer dtr-inline" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 1108px;">
+    <thead>
+        <tr role="row"><td class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 32px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 540px;" aria-label="Subject: activate to sort column ascending">Subject</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 102px;" aria-label="Status: activate to sort column ascending">Status</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 200px;" aria-label="Last Updated: activate to sort column ascending">Last Updated</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 184px;" aria-label="Agent: activate to sort column ascending">Agent</td></tr>
+    </thead>
+<tbody><tr role="row" class="odd"><td class="sorting_1">1</td><td><a href="userCompletedTickets/1">Eius asperiores deleniti rem at cumque.</a></td><td><div style="color: #15a000">Solved</div></td><td>7 minutes ago</td><td>Eden Walter</td></tr></tbody></table><div class="row"><div class="col-xs-6"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div></div><div class="col-xs-6"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="DataTables_Table_0" tabindex="0" id="DataTables_Table_0_previous"><a href="#">Previous</a></li><li class="paginate_button active" aria-controls="DataTables_Table_0" tabindex="0"><a href="#">1</a></li><li class="paginate_button next disabled" aria-controls="DataTables_Table_0" tabindex="0" id="DataTables_Table_0_next"><a href="#">Next</a></li></ul></div></div></div></div>    </div>
+
+</div>
+    </div>
+
+
+    <!-- JavaScripts -->
+    <script src="./Ticketi demo - User Helpdesk completed page_files/jquery.min.js"></script>
+    <script src="./Ticketi demo - User Helpdesk completed page_files/bootstrap.min.js"></script>
+        	<script src="./Ticketi demo - User Helpdesk completed page_files/jquery.dataTables.min.js"></script>
+	<script src="./Ticketi demo - User Helpdesk completed page_files/dataTables.bootstrap.js"></script>
+	<script src="./Ticketi demo - User Helpdesk completed page_files/dataTables.responsive.min.js"></script>
+	<!-- <script>
+	    $('.table').DataTable({
+	        processing: false,
+	        serverSide: true,
+	        responsive: true,
+        	lengthMenu: [[10,50,100],[10,50,100]],
+	        ajax: 'http://ticketit.kordy.info/tickets/data/1',
+	        language: {
+				decimal:        "",
+				emptyTable:     "No data available in table",
+				info:           "Showing _START_ to _END_ of _TOTAL_ entries",
+				infoEmpty:      "Showing 0 to 0 of 0 entries",
+				infoFiltered:   "(filtered from _MAX_ total entries)",
+				infoPostFix:    "",
+				thousands:      ",",
+				lengthMenu:     "Show _MENU_ entries",
+				loadingRecords: "Loading...",
+				processing:     "Processing...",
+				search:         "Search:",
+				zeroRecords:    "No matching records found",
+				paginate: {
+					first:      "First",
+					last:       "Last",
+					next:       "Next",
+					previous:   "Previous"
+				},
+				aria: {
+					sortAscending:  ": activate to sort column ascending",
+					sortDescending: ": activate to sort column descending"
+				},
+			},
+	        columns: [
+	            { data: 'id', name: 'ticketit.id' },
+	            { data: 'subject', name: 'subject' },
+	            { data: 'status', name: 'ticketit_statuses.name' },
+	            { data: 'updated_at', name: 'ticketit.updated_at' },
+            	{ data: 'agent', name: 'users.name' },
+	            	        ]
+	    });
+	</script> -->
+
+
+</body></html>

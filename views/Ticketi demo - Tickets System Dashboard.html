@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ticketi demo -     Tickets System Dashboard
+</title>
+
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+
+    <!-- Styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        .fa-btn {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body id="app-layout">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="/activeTickets">
+                    HelpDesk Demo
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                                                    
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Master Admin <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+                    <script type="text/javascript">
+    function loadCSS(filename) {
+        var file = document.createElement("link");
+        file.setAttribute("rel", "stylesheet");
+        file.setAttribute("type", "text/css");
+        file.setAttribute("href", filename);
+
+        if (typeof file !== "undefined"){
+            document.getElementsByTagName("head")[0].appendChild(file)
+        }
+    }
+    loadCSS("//cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css");
+    loadCSS("//cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css");
+                    loadCSS("https://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+                            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/theme/monokai.min.css");
+            </script><div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="">
+                <a href="/activeTickets">Active Tickets
+                    <span class="badge">
+                         0                    </span>
+                </a>
+            </li>
+            <li role="presentation" class="">
+                <a href="/completedTickets">Completed Tickets
+                    <span class="badge">
+                        98                    </span>
+                </a>
+            </li>
+
+                            <li role="presentation" class="active">
+                    <a href="/ticketDashBoard">Dashboard</a>
+                </li>
+
+                <li role="presentation" class="dropdown ">
+
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Settings <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li role="presentation" class="">
+                            <a href="/manageStatuses">Statuses</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/managePriorities">Priorities</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageAgents">Agents</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageCategories">Categories</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/config">Configuration</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageAdmin">Administrator</a>
+                        </li>
+                    </ul>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+            <div class="row">
+            <div class="col-lg-3 col-md-4 col-lg-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3" style="font-size: 5em;">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <h1>98</h1>
+                                <div>Total tickets</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3" style="font-size: 5em;">
+                                <i class="glyphicon glyphicon-wrench"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <h1>0</h1>
+                                <div>Open tickets</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3" style="font-size: 5em;">
+                                <i class="glyphicon glyphicon-thumbs-up"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <h1>98</h1>
+                                <span>Closed tickets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> Performance Indicator
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    Periods
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li>
+                                        <a href="/ticketDashBoard?2">
+                                            3 months
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/ticketDashBoard?5">
+                                            6 months
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/ticketDashBoard?11">
+                                            12 months
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div id="curve_chart" style="width: 100%; height: 350px"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Tickets share per category
+                            </div>
+                            <div class="panel-body">
+                                <div id="catpiechart" style="width: auto; height: 350;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Tickets share per agent
+                            </div>
+                            <div class="panel-body">
+                                <div id="agentspiechart" style="width: auto; height: 350;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                                                <ul class="nav nav-tabs nav-justified">
+                    <li class="active">
+                        <a data-toggle="pill" href="#information-panel-categories">
+                            <i class="glyphicon glyphicon-folder-close"></i>
+                            <small>Categories</small>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a data-toggle="pill" href="#information-panel-agents">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <small>Agents</small>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a data-toggle="pill" href="#information-panel-users">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <small>Users</small>
+                        </a>
+                    </li>
+                </ul>
+                <br>
+                <div class="tab-content">
+                    <div id="information-panel-categories" class="list-group tab-pane fade in active">
+                        <a href="#" class="list-group-item disabled">
+                            <span>Category
+                                <span class="badge">Total</span>
+                            </span>
+                            <span class="pull-right text-muted small">
+                                <em>
+                                    Open /
+                                     Closed
+                                </em>
+                            </span>
+                        </a>
+                                                    <a href="#" class="list-group-item">
+                        <span style="color: #0014f4">
+                            Technical <span class="badge">43</span>
+                        </span>
+                        <span class="pull-right text-muted small">
+                            <em>
+                                0 /
+                                 43
+                            </em>
+                        </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                        <span style="color: #2b9900">
+                            Billing <span class="badge">23</span>
+                        </span>
+                        <span class="pull-right text-muted small">
+                            <em>
+                                0 /
+                                 23
+                            </em>
+                        </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                        <span style="color: #7e0099">
+                            Customer Services <span class="badge">32</span>
+                        </span>
+                        <span class="pull-right text-muted small">
+                            <em>
+                                0 /
+                                 32
+                            </em>
+                        </span>
+                            </a>
+                                                
+                    </div>
+                    <div id="information-panel-agents" class="list-group tab-pane fade ">
+                        <a href="#" class="list-group-item disabled">
+                            <span>Agent
+                                <span class="badge">Total</span>
+                            </span>
+                            <span class="pull-right text-muted small">
+                                <em>
+                                    Open /
+                                    Closed
+                                </em>
+                            </span>
+                        </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Mr. Cortez Reynolds DDS
+                                    <span class="badge">
+                                        0
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                         0
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Mr. Hyman Corwin
+                                    <span class="badge">
+                                        40
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                         40
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Rebecca Torphy Sr.
+                                    <span class="badge">
+                                        18
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                         18
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Marley Hudson DVM
+                                    <span class="badge">
+                                        11
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                         11
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Dr. Thaddeus Gusikowski Jr.
+                                    <span class="badge">
+                                        29
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                         29
+                                    </em>
+                                </span>
+                            </a>
+                                                
+                    </div>
+                    <div id="information-panel-users" class="list-group tab-pane fade ">
+                        <a href="#" class="list-group-item disabled">
+                            <span>User
+                                <span class="badge">Total</span>
+                            </span>
+                            <span class="pull-right text-muted small">
+                                <em>
+                                    Open /
+                                    Closed
+                                </em>
+                            </span>
+                        </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Master Admin
+                                    <span class="badge">
+                                        0
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        0
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Kayli Hirthe
+                                    <span class="badge">
+                                        1
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        1
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Stephanie Smith
+                                    <span class="badge">
+                                        4
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        4
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Laverne O&#039;Reilly
+                                    <span class="badge">
+                                        4
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        4
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Arden Herman
+                                    <span class="badge">
+                                        5
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        5
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Dock Kuvalis V
+                                    <span class="badge">
+                                        4
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        4
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Ernesto Herman III
+                                    <span class="badge">
+                                        2
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        2
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Jalen Breitenberg
+                                    <span class="badge">
+                                        1
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        1
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Jannie Reynolds Jr.
+                                    <span class="badge">
+                                        4
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        4
+                                    </em>
+                                </span>
+                            </a>
+                                                    <a href="#" class="list-group-item">
+                                <span>
+                                    Mya Padberg
+                                    <span class="badge">
+                                        4
+                                    </span>
+                                </span>
+                                <span class="pull-right text-muted small">
+                                    <em>
+                                        0 /
+                                        4
+                                    </em>
+                                </span>
+                            </a>
+                                                <ul class="pagination"><li class="disabled"><span>&laquo;</span></li> <li class="active"><span>1</span></li><li><a href="/ticketDashBoard?users_page=2">2</a></li><li><a href="/ticketDashBoard?users_page=3">3</a></li><li><a href="/ticketDashBoard?users_page=4">4</a></li> <li><a href="/ticketDashBoard?users_page=2" rel="next">&raquo;</a></li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    <!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                    <script type="text/javascript"
+            src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+    <script type="text/javascript">
+        google.setOnLoadCallback(drawChart);
+
+        // performance line chart
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["Month", "Technical", "Billing", "Customer Services"],
+                                    ["May 2017", 4,4.3,4],
+                                    ["June 2017", 3.7,3.5,5],
+                                    ["July 2017", 0,0,0],
+                            ]);
+
+            var options = {
+                title: 'How many days in average to resolve a ticket?',
+                curveType: 'function',
+                legend: {position: 'right'},
+                vAxis: {
+                    viewWindowMode:'explicit',
+                    format: '#',
+                    viewWindow:{
+                        min:0
+                    }
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+
+            // Categories Pie Chart
+            var cat_data = google.visualization.arrayToDataTable([
+              ['Category', 'Tickets'],
+                                  ['Technical', 43],
+                                  ['Billing', 23],
+                                  ['Customer Services', 32],
+                          ]);
+
+            var cat_options = {
+              title: 'Tickets distribution per category',
+              legend: {position: 'bottom'}
+            };
+
+            var cat_chart = new google.visualization.PieChart(document.getElementById('catpiechart'));
+
+            cat_chart.draw(cat_data, cat_options);
+
+            // Agents Pie Chart
+            var agent_data = google.visualization.arrayToDataTable([
+              ['Agent', 'Tickets'],
+                                  ['Mr. Cortez Reynolds DDS', 0],
+                                  ['Mr. Hyman Corwin', 40],
+                                  ['Rebecca Torphy Sr.', 18],
+                                  ['Marley Hudson DVM', 11],
+                                  ['Dr. Thaddeus Gusikowski Jr.', 29],
+                          ]);
+
+            var agent_options = {
+              title: 'Tickets distribution per Agent',
+              legend: {position: 'bottom'}
+            };
+
+            var agent_chart = new google.visualization.PieChart(document.getElementById('agentspiechart'));
+
+            agent_chart.draw(agent_data, agent_options);
+
+        }
+    </script>
+    </body>
+</html>

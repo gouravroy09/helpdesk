@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Employee - Claims</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+  <link href="css/table-fixedheader.css" rel="stylesheet">
+  <style type="text/css">
+            th, td {
+                width: 100px;
+            }
+          </style>
+ <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script>
+    $(document).ready(function () {
+      var options = {
+                beforeSubmit: showRequest,  // pre-submit callback
+                success: showResponse  // post-submit callback
+              };
+
+            // bind to the form's submit event
+            $('form').submit(function () {
+              $(this).ajaxSubmit(options);
+                // always return false to prevent standard browser submit and page navigation
+                return false;
+              });
+          });
+
+        // pre-submit callback
+        function showRequest(formData, jqForm, options) {
+          alert('Uploading is starting.');
+          return true;
+        }
+
+        // post-submit callback
+        function showResponse(responseText, statusText, xhr, $form) {
+          alert('status: ' + statusText + '\n\nresponseText: \n' + responseText );
+        }
+      </script>
+
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- <form id="frmUploader2" enctype="multipart/form-data"  method="post">
+        <input type="file" name="imgUploader" multiple />
+        <input type="submit" name="submit" id="btnSubmit" value="Upload" />
+      </form> -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand page-scroll" href="#page-top">Baisc Info</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                  <a class="page-scroll" href="#page-top"></a>
+                </li>
+                <!-- <li>
+                  <a class="page-scroll" href="#about">Employee Details</a>
+                </li> -->
+                <li>
+                  <a class="page-scroll" href="#services">Claims History</a>
+                </li>
+                <li>
+                  <a class="page-scroll" href="#contact">New Claim</a>
+                </li>
+                <li>
+                  <a class="page-scroll" href="#travel">Travel Claim</a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container -->
+        </nav>
+
+      <section id="intro" class="intro-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+              <div class="form-group">
+          <label class="control-label col-sm-1"  for="Name">Name:</label>
+          <div class="col-sm-11">
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter Name" disabled="true">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-1" for="Emp_Type">Emp_Type:</label>
+          <div class="col-sm-5">
+            <input id="Emp_Type" name="Emp_Type" class="form-control" disabled="true" />
+        </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-1 " for="Grade">Grade:</label>
+            <div class="col-sm-5">
+              <input id="Grade" name="Grade" class="form-control" disabled="true" />
+            </div>
+          </div>
+        
+            </div></div></div></section>
+
+            <!-- <section id="about" class="about-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+
+              
+              </div></div></div></section> -->
+
+
+              <section id="services" class="services-section">
+          <div class="container">
+            <div class="row">
+              <% include reimburseHistory.ejs %>
+              
+              </div></div></section>
+
+
+              <section id="contact" class="contact-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-11">
+
+              <div class="text-center">
+          <h2 style="margin:30px 30px 30px 30px;">Claims Form</h2>
+        </div>
+        <!-- <form class="form-horizontal" id="frmUploader"> -->
+        
+
+          <div class="col-lg-10" >
+            <table class ="table table-hover">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Maximum Amount</th>
+                  <th>Remaining Frequency</th>
+                  
+                  <th>Claimed Amount</th>
+                  <th>Remaining Claim Amount</th>
+                  <th>New Claim</th>
+                  <th>Project Code</th>
+                  <th>Attachments</th>
+                  <th></th>
+                </tr>  
+              </thead>
+
+            </table>
+          </div>
+          <div class="col-lg-12" style="overflow-y: scroll;overflow-x: scroll; width:1200px; height:300px;">
+            <table id="claim_reimbursement" class ="table table-striped">
+              <tbody ></tbody>
+            </table></div>
+              </div></div></div></section>
+              <section id="travel" class="services-section">
+          <div class="container">
+            <div class="row">
+              <% include travel_claim.ejs %>
+              </div></div></section>
+
+
+            <!-- <button  class="btn btn-primary" type="button" align="center">Submit</button> -->
+
+            <!-- </form> -->
+          
+          <input id="Emp_Id" name="Emp_Id" type="hidden" />
+          <input id="Emp_Type_Id" name="Emp_Type_Id" type="hidden" />
+          <input id="Project_Codes" name="Project_Codes" type="hidden" />
+          <input id="User_Claim_Types" name="User_Claim_Types" type="hidden" />
+        </body>
+
+       
+
+
+
+        <script type="text/javascript">
+          function getUserById(id){
+            $.getJSON( 'http://'+location.hostname + ':3000/custom/user/' + id,{
+              format: "json"
+            } ,
+            function( data ) {
+              $('#Name').val(data[0].fullname);
+              $('#Emp_Type').val(data[0].description);
+              $('#Emp_Type_Id').val(data[0].emp_type_id);
+              $('#Grade').val(data[0].emp_grade_code);
+              $('#Emp_Id').val(data[0].id);
+              getReimbursementHistory(data[0].id);
+      //alert(data[0].emp_no);
+
+    });
+          }
+
+          /*function empReimburseHistory(){
+            $.getJSON( 'http://'+location.hostname + ':3000/custom/reimbursehistory/1',{
+              format: "json"
+            } ,
+            function( data ) {
+
+              $.each(data, function(key,value) {
+  var map;
+  if(localStorage.getItem(value.reimbursement_type)===null){
+      localStorage.setItem(value.reimbursement_amount + localStorage.getItem(value.reimbursement_type));
+      alert("asdasdasdas");
+  }else{
+    localStorage.setItem(value.reimbursement_type,value.reimbursement_amount);
+    alert("esle");
+  }
+});
+            });
+          }
+*/
+          function reimbursementClaimed(result){
+            var map = new Map();
+            var map2 = new Map();
+//alert(map);
+if(result.length!=undefined){
+  for(i=0;i<result.length;i++){
+    if(map.has(result[i].reimbursement_type)){
+      map2.set(result[i].reimbursement_type,map2.get(result[i].reimbursement_type) +1);
+      var key =result[i].reimbursement_type;
+      var oldvalue = map.get(result[i].reimbursement_type);
+      var newvalue = oldvalue + result[i].reimbursement_amount;
+      map.set(key,newvalue);
+//alert(map.get(result[i].reimbursement_type)+result[i].reimbursement_amount);
+  //alert(map.size);
+}else{
+  map.set(result[i].reimbursement_type,result[i].reimbursement_amount);
+  map2.set(result[i].reimbursement_type,1);
+}
+}
+}
+updateTable(map,map2);
+}
+
+function getReimbursementHistory(id){
+  //alert($('#Emp_Id').val());
+  $.ajax({
+    type: "GET",
+    url: /*"http://localhost:3000/Reimbursements/"*/ 'http://'+location.hostname + ':3000/custom/reimbursehistory/'+id,
+    data: '{}',
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (result) {
+      reimbursementClaimed(result);
+      $.each(result, function(key,value) {
+        var statusCell = '</td><td><a class="btn btn-danger" >' + value.status  + '</a></td></tr>' ;
+
+        if(value.status==='hr-approved'){
+          statusCell = '</td><td><a class="btn btn-warning">' + value.status  + '</a></td></tr>' ;
+          }
+          if(value.status==='fin-approved'){
+          statusCell = '</td><td><a class="btn btn-info" >' + value.status  + '</a></td></tr>' ;
+          }
+          if(value.status==='processed'){
+          statusCell = '</td><td><a class="btn btn-success">' + value.status  + '</a></td></tr>' ;
+          }
+          /*else if(value.status=='hr-approved'){
+
+          }else if(value.status=='hr-approved'){
+
+          }else (value.status=='hr-approved'){
+
+          }*/
+      //alert(key+1);
+        $('#history_table').append(
+          '<tr><th scope="row">' + (key+1) + '</th><td>' + value.description + '</td><td>' + value.reimbursement_amount + '</td><td>' + (new Date(Date.parse(value.time))).toLocaleString() +
+            statusCell
+          /*'</td><td class="btn btn-success" >' + value.status  + '</td></tr>' */
+          );
+
+      });
+
+
+    },
+    error: function(result){
+      console.log(result);
+    }
+  });
+}
+//alert($('#Emp_Type').val());
+
+function updateTable(map,map2){
+//alert('http://'+location.hostname + ':3000/custom/userreimburse/'+$('#Emp_Type_Id').val()+ '/' +$('#Grade').val());
+  //alert($('#Grade').val());
+  //$('#Emp_Id').val();
+ $.getJSON( /*"http://localhost:3000/Reimbursements/"*/ 'http://'+location.hostname + ':3000/custom/userreimburse/'
+  +$('#Emp_Type_Id').val()+ '/' +$('#Grade').val(),{
+  format: "json"
+} ,
+function( data ) {
+  $.each(data, function(key,value) {
+            var string = value.description;
+            //alert(string.substring(0,5));
+            if(string.substring(0,6)=='Travel'){
+              $('#travel_type').append($("<option />").val(value.id).text(string));
+              //$('#travel_type').append($("<option />").val(value.id).text(value);
+            }
+           });
+
+  $('#User_Claim_Types').val(data);
+  $.each(data, function(key,value) {
+  //var used = map.get(value.id);
+    //alert(key);
+    var max = value.amount;
+    var claimed = (map.has(value.id)?map.get(value.id):0);
+    var remaining = max -claimed;
+    var remainingFreqeuncy = value.frequency /*- map2.get(value.id)*/;
+    if(map2.has(value.id)){
+      remainingFreqeuncy = remainingFreqeuncy - map2.get(value.id);
+    }
+
+    if(remainingFreqeuncy>0){
+
+    $('#claim_reimbursement').append('<tr><th scope="row">'+value.description+'</th><td></td><td></td><td>'+value.amount+
+      '</td><td></td><td></td><td>'+remainingFreqeuncy+'</td><td>'+'</td><td>'+ (map.has(value.id)?map.get(value.id):0)+'</td>'+
+       '<td></td><td>'+remaining+'</td>'+
+      '<input type="text" class="form-control" id="type" placeholder="Type">'+
+
+      /*'<td><input type="file" name="imgUploader" multiple /><input style="margin:10px 10px 10px 10px;" type="submit" name="submit" id="btnSubmit" value="Upload" /></td>' +'</tr>'*/
+      /*'<a class="page-scroll btnSelect"  href="#myModal" data-toggle="modal" style="color:white;background-color:green;">Update</a>&nbsp;&nbsp;'+'<a class="page-scroll btnSelect"  >Delete</a>'+'</td></tr>'*/
+
+      '<td><form id="frmUploader'+key+'" enctype="multipart/form-data"  method="post">'+
+      ' <table style="margin:auto;/*border:solid; width:50%*/">'+
+      '<tr>'+
+      
+      '<td>'+
+      '<input style="width: 120px;" type="number" placeholder="Claim" max="'+remaining+'" name="reimbursement_amount" required />'+
+      '</td>'+
+      '<td>'+
+      '<select id="selectProject'+key+'" type="text" name="Project_Code"  required><option value="">Select</option></select>'+
+      '</td>'+
+      '<td>'+
+      '<input type="file" name="imgUploader"  required/>'+
+      '</td>'+
+      '<td>'+
+      '<button type="submit" name="submit" id="btnSubmit" class="btn btn-primary" >Submit</button>'+
+      '</td>'+
+      '</tr>'+
+
+      '</form></td>'
+    /*<form id="frmUploader2" enctype="multipart/form-data"  method="post">
+        <input type="file" name="imgUploader" multiple />
+        <input type="submit" name="submit" id="btnSubmit" value="Upload" />
+    </form>
+    */
+
+    +'</tr>'
+
+    ); 
+    addProjectCodes('selectProject'+key);
+    $('#frmUploader'+key+'').attr('action' , 'http://' + location.hostname + ':3000/api/Upload');
+    $('#frmUploader'+key+'').append($("<input />").attr('type', 'hidden').attr('name', "emp_id").attr('value',$('#Emp_Id').val()));
+    $('#frmUploader'+key+'').append($('<input />').attr('type', 'hidden').attr('name', 'reimbursement_type').attr('value',value.id));
+    }
+
+      //$('#frmUploader').append($("<input />").attr('type', 'hidden').attr('name', "emp_id").attr('value', "something");
+    
+    });
+//alert($(value.id);
+});
+
+}
+
+function addProjectCodes(selectElementId){
+  $.getJSON( /*"http://localhost:3000/Employees/"*/ 'http://'+location.hostname +':3000/custom/projectCodes',{
+      format: "json"
+    } ,
+    function( data ) {
+      $('#Project_Codes').val(data);
+      //localStorage.setItem('testObject', data);
+      $.each(data, function(key,value) {
+            $('#project_code').append($("<option />").val(value.project_code).text(value.project_code));
+           });
+      //localStorage.setItem("empType", data);
+      $.each(data, function(key,value) {
+        $('#'+selectElementId+'').append($("<option />").val(value.project_code).text(value.project_code));
+        //localStorage.setItem(value.description,value.id);
+      });
+    });
+}
+window.onload = function() {
+  //updateTable();
+  //alert(document.URL.split('?')[1].split('=')[1]);
+  loadTravelClaimTypes();
+  loadProjectCodes();
+  getUserById(document.URL.split('?')[1].split('=')[1]);
+  //getReimbursementHistory();
+//test();
+};
+</script>
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Scrolling Nav JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+</html>

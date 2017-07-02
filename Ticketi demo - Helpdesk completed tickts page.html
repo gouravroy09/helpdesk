@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ticketi demo -     Helpdesk main page
+</title>
+
+    <!-- Fonts -->
+    <link href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/css.css" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/bootstrap.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        .fa-btn {
+            margin-right: 6px;
+        }
+    </style>
+<link rel="stylesheet" type="text/css" href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/dataTables.css"><link rel="stylesheet" type="text/css" href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/responsive.css"><link rel="stylesheet" type="text/css" href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/summernote.css"><link rel="stylesheet" type="text/css" href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/font-awesome_002.css"><link rel="stylesheet" type="text/css" href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/codemirror.css"><link rel="stylesheet" type="text/css" href="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/monokai.css"></head>
+<body id="app-layout">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="/activeTickets">
+                    HelpDesk Demo
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                                                    
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Master Admin <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+                    <script type="text/javascript">
+    function loadCSS(filename) {
+        var file = document.createElement("link");
+        file.setAttribute("rel", "stylesheet");
+        file.setAttribute("type", "text/css");
+        file.setAttribute("href", filename);
+
+        if (typeof file !== "undefined"){
+            document.getElementsByTagName("head")[0].appendChild(file)
+        }
+    }
+    loadCSS("//cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css");
+    loadCSS("//cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css");
+                    loadCSS("https://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+                            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/theme/monokai.min.css");
+            </script><div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="">
+                <a href="/activeTickets">Active Tickets
+                    <span class="badge">
+                         3                    </span>
+                </a>
+            </li>
+            <li role="presentation" class="active">
+                <a href="/completedTickets">Completed Tickets
+                    <span class="badge">
+                        77                    </span>
+                </a>
+            </li>
+
+                            <li role="presentation" class="">
+                    <a href="/ticketDashBoard">Dashboard</a>
+                </li>
+
+                <li role="presentation" class="dropdown ">
+
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Settings <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li role="presentation" class="">
+                            <a href="/manageStatuses">Statuses</a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="/managePriorities">Priorities</a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="/manageAgents">Agents</a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="/manageCategories">Categories</a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="/config">Configuration</a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="/manageAdmin">Administrator</a>
+                        </li>
+                    </ul>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+    <div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h2>My Tickets
+            <a href="/newTicket" class="btn btn-primary pull-right">Create new ticket</a>
+        </h2>
+    </div>
+
+    <div class="panel-body">
+        <div id="message"></div>
+
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline no-footer"><div class="row"><div class="col-xs-6"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm"><option value="10" selected="selected">10</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-xs-6"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0" type="search"></label></div></div></div><table class="table table-condensed table-stripe ddt-responsive dataTable no-footer dtr-inline collapsed" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 1108px;">
+    <thead>
+        <tr role="row"><td class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 58px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 398px;" aria-label="Subject: activate to sort column ascending">Subject</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 57px;" aria-label="Status: activate to sort column ascending">Status</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 126px;" aria-label="Last Updated: activate to sort column ascending">Last Updated</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 152px;" aria-label="Agent: activate to sort column ascending">Agent</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 65px;" aria-label="Priority: activate to sort column ascending">Priority</td><td class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 182px;" aria-label="Owner: activate to sort column ascending">Owner</td></tr>
+    </thead>
+<tbody><tr role="row" class="odd"><td class="sorting_1">1</td><td><a href="/activeTickets/1">Hic soluta ea non et.</a></td><td><div style="color: #15a000">Solved</div></td><td>16 minutes ago</td><td>Sylvan Armstrong</td><td><div style="color: #e1d200">Normal</div></td><td>Dwight Kirlin</td></tr><tr role="row" class="even"><td class="sorting_1">2</td><td><a href="/activeTickets/2">Repellendus reiciendis quibusdam sit quaerat est.</a></td><td><div style="color: #15a000">Solved</div></td><td>5 months ago</td><td>Sylvan Armstrong</td><td><div style="color: #069900">Low</div></td><td>Dwight Kirlin</td></tr><tr role="row" class="odd"><td class="sorting_1">3</td><td><a href="/activeTickets/3">Non vel cum dolores iste modi nobis.</a></td><td><div style="color: #15a000">Solved</div></td><td>6 months ago</td><td>Sylvan Armstrong</td><td><div style="color: #e1d200">Normal</div></td><td>Dwight Kirlin</td></tr><tr role="row" class="even"><td class="sorting_1">5</td><td><a href="/activeTickets/5">Quidem aliquid et debitis aliquam inventore.</a></td><td><div style="color: #15a000">Solved</div></td><td>5 months ago</td><td>Sylvan Armstrong</td><td><div style="color: #e1d200">Normal</div></td><td>Abner Roob</td></tr><tr role="row" class="odd"><td class="sorting_1">6</td><td><a href="/activeTickets/6">Quas deleniti est odio quia culpa ut in optio.</a></td><td><div style="color: #15a000">Solved</div></td><td>16 minutes ago</td><td>Brenda O'Keefe III</td><td><div style="color: #e10000">Critical</div></td><td>Abner Roob</td></tr><tr role="row" class="even"><td class="sorting_1">7</td><td><a href="/activeTickets/7">Enim maxime tempore voluptate dicta nesciunt.</a></td><td><div style="color: #15a000">Solved</div></td><td>8 months ago</td><td>Brenda O'Keefe III</td><td><div style="color: #e10000">Critical</div></td><td>Abner Roob</td></tr><tr role="row" class="odd"><td class="sorting_1">8</td><td><a href="/activeTickets/8">Illo eligendi aut neque quia.</a></td><td><div style="color: #15a000">Solved</div></td><td>8 months ago</td><td>Brenda O'Keefe III</td><td><div style="color: #e1d200">Normal</div></td><td>Mr. Ryley Lebsack MD</td></tr><tr role="row" class="even"><td class="sorting_1">9</td><td><a href="/activeTickets/9">Voluptatum nihil repudiandae molestiae vel.</a></td><td><div style="color: #15a000">Solved</div></td><td>4 months ago</td><td>Brenda O'Keefe III</td><td><div style="color: #069900">Low</div></td><td>Mr. Ryley Lebsack MD</td></tr><tr role="row" class="odd"><td class="sorting_1">10</td><td><a href="/activeTickets/10">Blanditiis ut sed ratione distinctio.</a></td><td><div style="color: #15a000">Solved</div></td><td>4 months ago</td><td>Brenda O'Keefe III</td><td><div style="color: #e10000">Critical</div></td><td>Mr. Ryley Lebsack MD</td></tr><tr role="row" class="even"><td class="sorting_1">11</td><td><a href="/activeTickets/11">Excepturi dolorem eaque quia enim adipisci et.</a></td><td><div style="color: #15a000">Solved</div></td><td>2 months ago</td><td>Sylvan Armstrong</td><td><div style="color: #069900">Low</div></td><td>Emmanuelle Grimes</td></tr></tbody></table><div class="row"><div class="col-xs-6"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 77 entries</div></div><div class="col-xs-6"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="DataTables_Table_0" tabindex="0" id="DataTables_Table_0_previous"><a href="#">Previous</a></li><li class="paginate_button active" aria-controls="DataTables_Table_0" tabindex="0"><a href="#">1</a></li><li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a href="#">2</a></li><li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a href="#">3</a></li><li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a href="#">4</a></li><li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a href="#">5</a></li><li class="paginate_button disabled" aria-controls="DataTables_Table_0" tabindex="0" id="DataTables_Table_0_ellipsis"><a href="#">…</a></li><li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a href="#">8</a></li><li class="paginate_button next" aria-controls="DataTables_Table_0" tabindex="0" id="DataTables_Table_0_next"><a href="#">Next</a></li></ul></div></div></div></div>    </div>
+
+</div>
+    </div>
+
+
+    <!-- JavaScripts -->
+    <script src="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/jquery_002.js"></script>
+    <script src="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/bootstrap.js"></script>
+        	<script src="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/jquery.js"></script>
+	<script src="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/dataTables.js"></script>
+	<script src="Ticketi%20demo%20-%20Helpdesk%20completed%20tickts%20page_files/dataTables_002.js"></script>
+	<script>
+	    $('.table').DataTable({
+	        processing: false,
+	        serverSide: true,
+	        responsive: true,
+        	lengthMenu: [[10,50,100],[10,50,100]],
+	        ajax: '/activeTickets/data/1',
+	        language: {
+				decimal:        "",
+				emptyTable:     "No data available in table",
+				info:           "Showing _START_ to _END_ of _TOTAL_ entries",
+				infoEmpty:      "Showing 0 to 0 of 0 entries",
+				infoFiltered:   "(filtered from _MAX_ total entries)",
+				infoPostFix:    "",
+				thousands:      ",",
+				lengthMenu:     "Show _MENU_ entries",
+				loadingRecords: "Loading...",
+				processing:     "Processing...",
+				search:         "Search:",
+				zeroRecords:    "No matching records found",
+				paginate: {
+					first:      "First",
+					last:       "Last",
+					next:       "Next",
+					previous:   "Previous"
+				},
+				aria: {
+					sortAscending:  ": activate to sort column ascending",
+					sortDescending: ": activate to sort column descending"
+				},
+			},
+	        columns: [
+	            { data: 'id', name: 'ticketit.id' },
+	            { data: 'subject', name: 'subject' },
+	            { data: 'status', name: 'ticketit_statuses.name' },
+	            { data: 'updated_at', name: 'ticketit.updated_at' },
+            	{ data: 'agent', name: 'users.name' },
+	            		            { data: 'priority', name: 'ticketit_priorities.name' },
+	            	{ data: 'owner', name: 'users.name' },
+		            { data: 'category', name: 'ticketit_categories.name' }
+	            	        ]
+	    });
+	</script>
+
+
+</body></html>

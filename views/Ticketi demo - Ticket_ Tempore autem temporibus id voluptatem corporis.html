@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ticketi demo - Ticket: Tempore autem temporibus id voluptatem corporis.</title>
+
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+
+    <!-- Styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        .fa-btn {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body id="app-layout">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="">
+                    HelpDesk Demo
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                                                    
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Master Admin <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+                        <script type="text/javascript">
+    function loadCSS(filename) {
+        var file = document.createElement("link");
+        file.setAttribute("rel", "stylesheet");
+        file.setAttribute("type", "text/css");
+        file.setAttribute("href", filename);
+
+        if (typeof file !== "undefined"){
+            document.getElementsByTagName("head")[0].appendChild(file)
+        }
+    }
+    loadCSS("//cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css");
+    loadCSS("//cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css");
+                    loadCSS("https://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+                            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/theme/monokai.min.css");
+            </script><div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="">
+                <a href="/activeTickets">Active Tickets
+                    <span class="badge">
+                         0                    </span>
+                </a>
+            </li>
+            <li role="presentation" class="">
+                <a href="/completedTickets">Completed Tickets
+                    <span class="badge">
+                        86                    </span>
+                </a>
+            </li>
+
+                            <li role="presentation" class="">
+                    <a href="/ticketDashBoard">Dashboard</a>
+                </li>
+
+                <li role="presentation" class="dropdown ">
+
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Settings <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li role="presentation" class="">
+                            <a href="/manageStatuses">Statuses</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/managePriorities">Priorities</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageAgents">Agents</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageCategories">Categories</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/config">Configuration</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageAdmin">Administrator</a>
+                        </li>
+                    </ul>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="panel panel-default">
+    <div class="panel-body">
+        <div class="content">
+            <h2 class="header">
+                Tempore autem temporibus id voluptatem corporis.
+                <span class="pull-right">
+                                                <a href="#" class="btn btn-success">Reopen Ticket</a>
+                                                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ticket-edit-modal">
+                            Edit
+                        </button>
+                                                                                            <a href="#" class="btn btn-danger deleteit" form="delete-ticket-1" node="Tempore autem temporibus id voluptatem corporis.">Delete</a>
+                                                    </form>
+                                    </span>
+            </h2>
+            <div class="panel well well-sm">
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p> <strong>Owner</strong>: Miss Edyth Thiel PhD</p>
+                            <p>
+                                <strong>Status</strong>: 
+                                                                    <span style="color: #15a000">Solved</span>
+                                
+                            </p>
+                            <p>
+                                <strong>Priority</strong>: 
+                                <span style="color: #e1d200">
+                                    Normal
+                                </span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p> <strong>Responsible</strong>: Dr. Loma Cormier</p>
+                            <p>
+                                <strong>Category</strong>: 
+                                <span style="color: #2b9900">
+                                    Billing
+                                </span>
+                            </p>
+                            <p> <strong>Created</strong>: 1 month ago</p>
+                            <p> <strong>Last Update</strong>: 1 month ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <p> Molestiae vero velit dolores. Alias id est est deleniti voluptates. Natus praesentium porro impedit. Eum consequatur ipsam qui.<br />
+<br />
+Quo et qui itaque reiciendis ex hic. Dolore amet id quo voluptas rerum. Aspernatur doloremque quas enim odit ut sint. Non ut deleniti minus odio.<br />
+<br />
+Aut ut alias unde quam animi omnis. Laboriosam aspernatur quia repellendus perferendis ad. Non eum modi natus dolorem. </p>
+            </div>
+        </div>
+        <form method="POST" action="/" accept-charset="UTF-8" id="delete-ticket-1"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="RE6M5pB9ueBf1gFhPfMloxPJTY78ih7Oahmf0LNt">
+        </form>
+    </div>
+</div>
+
+            <div class="modal fade" id="ticket-edit-modal" tabindex="-1" role="dialog" aria-labelledby="ticket-edit-modal-Label">
+    <div class="modal-dialog model-lg" role="document">
+        <div class="modal-content">
+            <form method="POST" action="/" accept-charset="UTF-8" class="form-horizontal"><input name="_method" type="hidden" value="PATCH"><input name="_token" type="hidden" value="RE6M5pB9ueBf1gFhPfMloxPJTY78ih7Oahmf0LNt">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="ticket-edit-modal-Label">Tempore autem temporibus id voluptatem corporis.</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-sm-12">
+                                        <div class="form-group">
+                        <input class="form-control" required="required" name="subject" type="text" value="Tempore autem temporibus id voluptatem corporis.">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control summernote-editor" rows="5" required="required" name="content" cols="50">Molestiae vero velit dolores. Alias id est est deleniti voluptates. Natus praesentium porro impedit. Eum consequatur ipsam qui.&lt;br /&gt;
+&lt;br /&gt;
+Quo et qui itaque reiciendis ex hic. Dolore amet id quo voluptas rerum. Aspernatur doloremque quas enim odit ut sint. Non ut deleniti minus odio.&lt;br /&gt;
+&lt;br /&gt;
+Aut ut alias unde quam animi omnis. Laboriosam aspernatur quia repellendus perferendis ad. Non eum modi natus dolorem.</textarea>
+                    </div>
+                    
+                    <div class="form-group col-lg-6">
+                        <label for="priority_id" class="col-lg-4 control-label">Priority: </label>
+                        <div class="col-lg-8">
+                            <select class="form-control" id="priority_id" name="priority_id"><option value="1">Low</option><option value="2" selected="selected">Normal</option><option value="3">Critical</option></select>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="agent_id" class="col-lg-4 control-label">Agent: </label>
+                        <div class="col-lg-8">
+                            <select class="form-control" id="agent_id" name="agent_id"><option value="auto">Auto Select</option><option value="2">Miss Elisa Stehr Sr.</option><option value="4" selected="selected">Dr. Loma Cormier</option></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-lg-12">
+                        <label for="category_id" class="col-lg-6 control-label">Category: </label>
+                        <div class="col-lg-6">
+                            <select class="form-control" id="category_id" name="category_id"><option value="1">Technical</option><option value="2" selected="selected">Billing</option><option value="3">Customer Services</option></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label for="status_id" class="col-lg-6 control-label">Status: </label>
+                        <div class="col-lg-6">
+                            <select class="form-control" id="status_id" name="status_id"><option value="1">Pending</option><option value="2" selected="selected">Solved</option><option value="3">Bug</option></select>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input class="btn btn-primary" type="submit" value="Submit">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>    
+            <!-- Modal Dialog -->
+<div class="modal fade" id="confirmDelete" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Delete Ticket</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete ticket: :subject?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirm">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+            <br>
+        <h2>Comments</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Dr. Loma Cormier
+                    <span class="pull-right"> 1 month ago </span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="content">
+                    <p> Nemo aut commodi iure molestias. Sed nihil eos totam asperiores architecto quaerat. Dicta dignissimos omnis non odio sint.<br />
+<br />
+In sunt blanditiis itaque odit impedit consequatur quis qui. Consectetur incidunt possimus ut voluptatibus. Temporibus nostrum architecto veniam corporis. Unde aut dolores nemo dolor ea accusantium.<br />
+<br />
+Et doloremque et quaerat modi itaque. Non temporibus in fugiat et dolor quia. Quidem eum sequi ut sed accusantium tenetur. Sed placeat ipsum non consequatur. </p>
+                </div>
+            </div>
+        </div>
+            <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Miss Edyth Thiel PhD
+                    <span class="pull-right"> 1 month ago </span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="content">
+                    <p> Laboriosam et qui animi illum illo labore dicta. Iste quia voluptatem recusandae distinctio reiciendis. Nisi totam cupiditate molestias assumenda ut perspiciatis occaecati.<br />
+<br />
+Aut ducimus libero occaecati dignissimos qui quae. Aliquid commodi animi quis veniam. Quia asperiores qui et temporibus ex.<br />
+<br />
+Veniam sit optio a maiores voluptatem nemo eos sit. Ut aut et sit velit reprehenderit ea exercitationem. Laboriosam qui cumque quae quidem qui iusto quam sed. Aut neque enim corporis adipisci sint voluptatem. Velit eos animi quidem aut magni rem. </p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="panel panel-default">
+    <div class="panel-body">
+        <form method="POST" action="/" accept-charset="UTF-8" class="form-horizontal"><input name="_token" type="hidden" value="RE6M5pB9ueBf1gFhPfMloxPJTY78ih7Oahmf0LNt">
+
+
+            <input name="ticket_id" type="hidden" value="1">
+
+            <fieldset>
+                <legend>Reply</legend>
+                <div class="form-group">
+                    <div class="col-lg-12">
+                        <textarea class="form-control summernote-editor" rows="3" name="content" cols="50"></textarea>
+                    </div>
+                </div>
+
+                <div class="text-right col-md-12">
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+    </div>
+
+
+    <!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            <!-- <script>
+        $(document).ready(function() {
+            $( ".deleteit" ).click(function( event ) {
+                event.preventDefault();
+                if (confirm("Are you sure you want to delete: " + $(this).attr("node") + " ?"))
+                {
+                    var form = $(this).attr("form");
+                    $("#" + form).submit();
+                }
+
+            });
+            $('#category_id').change(function(){
+                var loadpage = "http://ticketit.kordy.info/tickets/agents/list/" + $(this).val() + "/1";
+                $('#agent_id').load(loadpage);
+            });
+            $('#confirmDelete').on('show.bs.modal', function (e) {
+                $message = $(e.relatedTarget).attr('data-message');
+                $(this).find('.modal-body p').text($message);
+                $title = $(e.relatedTarget).attr('data-title');
+                $(this).find('.modal-title').text($title);
+
+                // Pass form reference to modal for submission on yes/ok
+                var form = $(e.relatedTarget).closest('form');
+                $(this).find('.modal-footer #confirm').data('form', form);
+            });
+
+            <!-- Form confirm (yes/ok) handler, submits form -->
+            $('#confirmDelete').find('.modal-footer #confirm').on('click', function(){
+                $(this).data('form').submit();
+            });
+        });
+    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/xml/xml.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.min.js"></script>
+<script>
+
+
+    $(function() {
+
+        var options = $.extend(true, {lang: '' , codemirror: {theme: 'monokai', mode: 'text/html', htmlMode: true, lineWrapping: true} } , {
+	"toolbar": [
+		["style", ["style"]],
+		["font", ["bold", "underline", "italic", "clear"]],
+		["color", ["color"]],
+		["para", ["ul", "ol", "paragraph"]],
+		["table", ["table"]],
+		["insert", ["link", "picture", "video"]],
+		["view", ["fullscreen", "codeview", "help"]]
+	]
+});
+
+        $("textarea.summernote-editor").summernote(options);
+
+        $("label[for=content]").click(function () {
+            $("#content").summernote("focus");
+        });
+    });
+
+
+</script>
+</body>
+</html>

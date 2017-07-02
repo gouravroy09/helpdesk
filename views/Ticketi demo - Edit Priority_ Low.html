@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ticketi demo - Edit Priority: Low</title>
+
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+
+    <!-- Styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        .fa-btn {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body id="app-layout">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="">
+                    HelpDesk Demo
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                                                    
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Master Admin <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+                    <div class="alert alert-info" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Note:</span>
+                All settings are read only in the demo environment!
+            </div>
+                    <script type="text/javascript">
+    function loadCSS(filename) {
+        var file = document.createElement("link");
+        file.setAttribute("rel", "stylesheet");
+        file.setAttribute("type", "text/css");
+        file.setAttribute("href", filename);
+
+        if (typeof file !== "undefined"){
+            document.getElementsByTagName("head")[0].appendChild(file)
+        }
+    }
+    loadCSS("//cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css");
+    loadCSS("//cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css");
+                    loadCSS("https://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+                            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/theme/monokai.min.css");
+            </script><div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="">
+                <a href="/activeTickets">Active Tickets
+                    <span class="badge">
+                         2                    </span>
+                </a>
+            </li>
+            <li role="presentation" class="">
+                <a href="/completedTickets">Completed Tickets
+                    <span class="badge">
+                        65                    </span>
+                </a>
+            </li>
+
+                            <li role="presentation" class="">
+                    <a href="/ticketDashBoard">Dashboard</a>
+                </li>
+
+                <li role="presentation" class="dropdown active">
+
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Settings <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li role="presentation" class="">
+                            <a href="/manageStatuses">Statuses</a>
+                        </li>
+                        <li role="presentation"  class="active">
+                            <a href="/managePriorities">Priorities</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageAgents">Agents</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageCategories">Categories</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/config">Configuration</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageAdmin">Administrator</a>
+                        </li>
+                    </ul>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+    <div class="well bs-component">
+        <form method="POST" action="" accept-charset="UTF-8" class="form-horizontal"><input name="_method" /1" accept-charset="UTF-8" class="form-horizontal"><input name="_method" type="hidden" value="PATCH"><input name="_token" type="hidden" value="RE6M5pB9ueBf1gFhPfMloxPJTY78ih7Oahmf0LNt">
+        <legend>Edit Priority: Low</legend>
+        <div class="form-group">
+    <label for="name" class="col-lg-2 control-label">Name: </label>
+    <div class="col-lg-10">
+        <input class="form-control" name="name" type="text" value="Low" id="name">
+    </div>
+</div>
+<div class="form-group">
+    <label for="color" class="col-lg-2 control-label">Color: </label>
+    <div class="col-lg-10">
+        <input class="form-control" name="color" type="color" value="#069900" id="color">
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-lg-10 col-lg-offset-2">
+        <a href="" class="btn btn-default">Back</a>
+                    <input class="btn btn-primary" type="submit" value="Update">
+            </div>
+</div>
+        </form>
+    </div>
+    </div>
+
+
+    <!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        </body>
+</html>

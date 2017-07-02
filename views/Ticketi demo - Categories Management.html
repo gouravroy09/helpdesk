@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ticketi demo -     Categories Management
+</title>
+
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+
+    <!-- Styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        .fa-btn {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body id="app-layout">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="/activeTickets">
+                    HelpDesk Demo
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                                                    
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Master Admin <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+                    <div class="alert alert-info" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Note:</span>
+                All settings are read only in the demo environment!
+            </div>
+                    <script type="text/javascript">
+    function loadCSS(filename) {
+        var file = document.createElement("link");
+        file.setAttribute("rel", "stylesheet");
+        file.setAttribute("type", "text/css");
+        file.setAttribute("href", filename);
+
+        if (typeof file !== "undefined"){
+            document.getElementsByTagName("head")[0].appendChild(file)
+        }
+    }
+    loadCSS("//cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css");
+    loadCSS("//cdn.datatables.net/responsive/1.0.7/css/responsive.bootstrap.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css");
+                    loadCSS("https://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+                            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.min.css");
+            loadCSS("https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/theme/monokai.min.css");
+            </script><div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="">
+                <a href="/activeTickets">Active Tickets
+                    <span class="badge">
+                         3                    </span>
+                </a>
+            </li>
+            <li role="presentation" class="">
+                <a href="/completedTickets">Completed Tickets
+                    <span class="badge">
+                        77                    </span>
+                </a>
+            </li>
+
+                            <li role="presentation" class="">
+                    <a href="/ticketDashBoard">Dashboard</a>
+                </li>
+
+                <li role="presentation" class="dropdown active">
+
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Settings <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li role="presentation" class="">
+                            <a href="/manageStatuses">Statuses</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/managePriorities">Priorities</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageAgents">Agents</a>
+                        </li>
+                        <li role="presentation"  class="active">
+                            <a href="/manageCategories">Categories</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/config">Configuration</a>
+                        </li>
+                        <li role="presentation"  class="">
+                            <a href="/manageAdmin">Administrator</a>
+                        </li>
+                    </ul>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Categories Management
+                <a href="newCategory" class="btn btn-primary pull-right">Create new category</a>
+            </h2>
+        </div>
+
+                    <div id="message"></div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                                    <tr>
+                        <td style="vertical-align: middle">
+                            1
+                        </td>
+                        <td style="color: #0014f4; vertical-align: middle">
+                            Technical
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-info">Edit</a>
+
+                                <a href="#" class="btn btn-danger deleteit" form="delete-1" node="Technical">Delete</a>
+                            <form method="POST" action="/manageCategories/1" accept-charset="UTF-8" id="delete-1"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="V8e5ssBNTdb3apRmOyb3yFUBs4GFdikRh1HiT5sB">
+                            </form>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td style="vertical-align: middle">
+                            2
+                        </td>
+                        <td style="color: #2b9900; vertical-align: middle">
+                            Billing
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-info">Edit</a>
+
+                                <a href="#" class="btn btn-danger deleteit" form="delete-2" node="Billing">Delete</a>
+                            <form method="POST" action="/manageCategories/2" accept-charset="UTF-8" id="delete-2"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="V8e5ssBNTdb3apRmOyb3yFUBs4GFdikRh1HiT5sB">
+                            </form>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td style="vertical-align: middle">
+                            3
+                        </td>
+                        <td style="color: #7e0099; vertical-align: middle">
+                            Customer Services
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-info">Edit</a>
+
+                                <a href="#" class="btn btn-danger deleteit" form="delete-3" node="Customer Services">Delete</a>
+                            <form method="POST" action="/manageCategories/3" accept-charset="UTF-8" id="delete-3"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="V8e5ssBNTdb3apRmOyb3yFUBs4GFdikRh1HiT5sB">
+                            </form>
+                        </td>
+                    </tr>
+                                </tbody>
+            </table>
+            </div>
+    </div>
+
+
+    <!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            <script>
+        $( ".deleteit" ).click(function( event ) {
+            event.preventDefault();
+            if (confirm("Are you sure you want to delete the category: " + $(this).attr("node") + " ?"))
+            {
+                var form = $(this).attr("form");
+                $("#" + form).submit();
+            }
+
+        });
+    </script>
+</body>
+</html>
